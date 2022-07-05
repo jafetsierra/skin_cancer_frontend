@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>AI for Skin Cancer Diagnosis</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+      <!--Main Navigation-->
+  <header>
+    <style>
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+          height: 50vh !important;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="/home.html">
+          <strong>Skin Cancer API</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html" rel="nofollow"
+                target="_self">About the project</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://github.com/jafetsierra" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://github.com/jafetsierra/VGG19_for_SkinCancer_diagnosis" rel="nofollow" target="_blank">
+                <i class="fab fa-python"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image vh-10 shadow-1-strong h-100">
+      <video style="min-width: 100%; min-height: 50%;" playsinline autoplay muted loop>
+        <source class="h-100"
+          src="https://mdbootstrap.com/img/video/animation-intro-min.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="mask" style="
+            background: linear-gradient(
+              45deg,
+              rgba(29, 236, 197, 0.7),
+              rgba(91, 14, 214, 0.7) 100%
+            );
+          ">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">AI for skin cancer diagnosis</h1>
+            <h5 class="mb-4">Free artificial intelligence api for medical diagnosis of skin cancer</h5>
+            <a class="btn btn-info btn-lg m-2" href="#prediction" role="button"
+              rel="nofollow" target="_self">Make a prediction</a>
+            <a class="btn btn-secondary btn-lg m-2" href="/about.html" target="_self"
+              role="button">About the project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+              <img src="img/vgg19.png" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>Made with a VGG architecture</strong></h4>
+            <p class="text-muted">
+              VGG is a standard deep convolutional neural network (CNN) wich consist of very small convolutional filters (3x3).
+              For this particular project VGG19 was used.
+            </p>
+            <p><strong>TransferLearning and FineTuning</strong></p>
+            <p class="text-muted">
+              The base model is VGG19 trained on Imagenet, to wich a new head consisting of an additional convolutional layer, maxpooling, batchnormalization and two 
+              Fully conected layers were added.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+      <br>
+      <br>
+      <section class="mb-5" id="prediction">
+        <h4 class="mb-5 text-center">
+          <strong>Upload an image to make a diagnosis</strong>
+        </h4>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6">
+            <form>
+              <div class="mb-3">
+                <input type="file" class="form-control" id="myfile" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Please select an image</div>
+              </div>
+              <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+    </div>
+  </main>
+  <!--Main layout-->
+  <br>
+  <br>
+  
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+      <p>Links of interest</p>
+      <a href="https://github.com/jafetsierra" class="btn btn-info m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/jafet-sierra-12975420b/" class="btn btn-info m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/jafetsierra/VGG19_for_SkinCancer_diagnosis" class="btn btn-info m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-python"></i>
+      </a>
+    </div>
+   
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022:
+      <a class="text-dark" href="https://mdbootstrap.com/">JafetSierra - jafet.sierra.l@gmail.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
